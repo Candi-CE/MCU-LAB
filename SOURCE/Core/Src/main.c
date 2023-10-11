@@ -102,7 +102,9 @@ int main(void)
 	  		 HAL_GPIO_TogglePin(LED_YEL_GPIO_Port, LED_YEL_Pin);
 	  	 }
 	  	 count--;
-	  	 HAL_Delay(10);
+	  	 //EX2 NHA
+
+	 HAL_Delay(10);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
