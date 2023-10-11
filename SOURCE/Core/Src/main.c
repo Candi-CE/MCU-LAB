@@ -91,19 +91,31 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int count = 200;
+  int count = 0, state = 1;
+
   HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(LED_YEL_GPIO_Port, LED_YEL_Pin, GPIO_PIN_SET);
   while (1)
   {
 	  if(count == 0){
-	  		 count = 200;
-	  		 HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-	  		 HAL_GPIO_TogglePin(LED_YEL_GPIO_Port, LED_YEL_Pin);
-	  	 }
-	  	 count--;
-	  	 //EX2 NHA
-
+		  switch(state){
+		  case 1://Red -> Green
+			  on_green();
+			  count= 300;
+			  state = 2;
+			  break;
+		  case 2: //Green -> Yellow
+			 on_yel();
+			 count= 200;
+			 state = 3;
+			 break;
+		  case 3: //Yellow -> Red
+			  on_red();
+			  count = 500;
+			  state = 1;
+		  }
+	  	}
+	 count--;
 	 HAL_Delay(10);
     /* USER CODE END WHILE */
 
