@@ -91,47 +91,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int count1 = 0, count2=0, count=0, state = 1;
+  int count = 12;
     while (1)
     {
-    	display7SEG_1(count1/100+1);
-    	display7SEG_2(count2/100+1);
-  	  if(count == 0){
-  		  switch(state){
-  		  case 1://Yellow1 - Red2 -> Red1 - Green2
-  			  on_red1();
-  			  on_green2();
-  			  count1= 500;
-  			  count2=300;
-  			  count = 300;
-  			  state = 2;
-  			  break;
-  		  case 2: //Red1 - Green2 -> Red1 - Yellow2
-  			 on_yel2();
-  			 count2= 200;
-  			count = 200;
-  			 state = 3;
-  			 break;
-  		  case 3: //Red1 - Yellow2 -> Green1 - Red2
-  			  on_green1();
-  			  on_red2();
-  			  count1 = 300;
-  			  count2=500;
-  			  count = 300;
-  			  state = 4;
-  			  break;
-  		  case 4: //Green1 - Red2 -> Yellow1 - Red2
-  			  on_yel1();
-  			  count1 = 200;
-  			  count = 200;
-  			  state = 1;
-
-  		  }
-  	  	}
-  	 count--;
-  	 count1--;
-  	 count2--;
-  	 HAL_Delay(10);
+    	off_led(count-1);
+    	if(count == 12) count = 0;
+    	on_led(count);
+    	++count;
+    	HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
