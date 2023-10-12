@@ -1,6 +1,6 @@
 #include <led.h>
-void on_led(int number){
-	switch(number){
+void setNumberOnClock(int num){
+	switch(num){
 	case 0:
 		HAL_GPIO_WritePin(LED_0_GPIO_Port, LED_0_Pin, GPIO_PIN_RESET);
 		break;
@@ -41,8 +41,8 @@ void on_led(int number){
 		break;
 	}
 }
-void off_led(int number){
-	switch(number){
+void clearNumberOnClock(int num){
+	switch(num){
 	case 0:
 		HAL_GPIO_WritePin(LED_0_GPIO_Port, LED_0_Pin, GPIO_PIN_SET);
 		break;
@@ -81,5 +81,14 @@ void off_led(int number){
 		break;
 	default:
 		break;
+	}
+}
+
+void clearAllClock(){
+    //TODO
+	int count = 11;
+	while(count>=0){
+		clearNumberOnClock(count);
+		count--;
 	}
 }
