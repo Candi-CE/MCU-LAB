@@ -1,0 +1,2 @@
+led.c:2:6:on_led	16	static
+led.c:44:6:off_led	16	static
