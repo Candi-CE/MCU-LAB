@@ -94,9 +94,9 @@ int main(void)
   int count = 12;
     while (1)
     {
-    	off_led(count-1);
+    	clearNumberOnClock(count-1);
     	if(count == 12) count = 0;
-    	on_led(count);
+    	setNumberOnClock(count);
     	++count;
     	HAL_Delay(500);
     /* USER CODE END WHILE */
