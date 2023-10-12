@@ -4,4 +4,5 @@ on_led.c:12:6:on_green1	8	static
 on_led.c:18:6:on_red2	8	static
 on_led.c:23:6:on_yel2	8	static
 on_led.c:28:6:on_green2	8	static
-on_led.c:34:6:display7SEG	16	static
+on_led.c:34:6:display7SEG_1	16	static
+on_led.c:131:6:display7SEG_2	16	static
