@@ -7,4 +7,5 @@ void on_red2();
 void on_yel2();
 void on_green2();
 
-void display7SEG (int number);
+void display7SEG_1 (int number);
+void display7SEG_2 (int number);

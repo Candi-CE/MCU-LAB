@@ -156,8 +156,10 @@ static void MX_GPIO_Init(void)
                           |LED_YEL2_Pin|LED_GREEN2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, A_7SEG_Pin|B_7SEG_Pin|C_7SEG_Pin|D_7SEG_Pin
-                          |E_7SEG_Pin|F_7SEG_Pin|G_7SEG_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, A_7SEG_1_Pin|B_7SEG_1_Pin|C_7SEG_1_Pin|D_7SEG_2_Pin
+                          |E_7SEG_2_Pin|F_7SEG_2_Pin|G_7SEG_2_Pin|D_7SEG_1_Pin
+                          |E_7SEG_1_Pin|F_7SEG_1_Pin|G_7SEG_1_Pin|A_7SEG_2_Pin
+                          |B_7SEG_2_Pin|C_7SEG_2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED_RED1_Pin LED_YEL1_Pin LED_GREEN1_Pin LED_RED2_Pin
                            LED_YEL2_Pin LED_GREEN2_Pin */
@@ -168,10 +170,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : A_7SEG_Pin B_7SEG_Pin C_7SEG_Pin D_7SEG_Pin
-                           E_7SEG_Pin F_7SEG_Pin G_7SEG_Pin */
-  GPIO_InitStruct.Pin = A_7SEG_Pin|B_7SEG_Pin|C_7SEG_Pin|D_7SEG_Pin
-                          |E_7SEG_Pin|F_7SEG_Pin|G_7SEG_Pin;
+  /*Configure GPIO pins : A_7SEG_1_Pin B_7SEG_1_Pin C_7SEG_1_Pin D_7SEG_2_Pin
+                           E_7SEG_2_Pin F_7SEG_2_Pin G_7SEG_2_Pin D_7SEG_1_Pin
+                           E_7SEG_1_Pin F_7SEG_1_Pin G_7SEG_1_Pin A_7SEG_2_Pin
+                           B_7SEG_2_Pin C_7SEG_2_Pin */
+  GPIO_InitStruct.Pin = A_7SEG_1_Pin|B_7SEG_1_Pin|C_7SEG_1_Pin|D_7SEG_2_Pin
+                          |E_7SEG_2_Pin|F_7SEG_2_Pin|G_7SEG_2_Pin|D_7SEG_1_Pin
+                          |E_7SEG_1_Pin|F_7SEG_1_Pin|G_7SEG_1_Pin|A_7SEG_2_Pin
+                          |B_7SEG_2_Pin|C_7SEG_2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
